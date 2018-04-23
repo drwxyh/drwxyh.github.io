@@ -97,7 +97,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "xiaole",
-        href: "http://suxiaole.com"
+        title: "苏小乐",
+        href: "https://huifenghechang.github.io"
     }
 ]

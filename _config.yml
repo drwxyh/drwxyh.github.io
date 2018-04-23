@@ -98,6 +98,6 @@ service-worker: true
 friends: [
     {
         title: "xiaole",
-        href: "http://xxx.com"
+        href: "http://suxiaole.com"
     }
 ]

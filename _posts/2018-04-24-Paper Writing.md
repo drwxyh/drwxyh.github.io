@@ -54,7 +54,7 @@ tags:                               #标签
 #### 标题-Title
 - 避免使用缩写，但是可以包括常见的易于理解的缩写；
 - 避免常见短语，比如：“novel”、“performance evaluation” 或者 “architecture”，因为这些单词太常见了，一搜索就是几千条结果，没人会拿这种词作为搜索关键词；用一些能体现你工作特征的形容词，比如：reliable，scalable，high-performance，robust，low-complexity，low-cost。
-- 如果需要论文标题的灵感，可以查询 [Academic Essay Title Generator](https://www.besttitlegenerator.com/index.php) 或者 [Research title generator!](https://cjquines.com/titlegen#)之类的网站。
+- 如果需要论文标题的灵感，可以查询 [Academic Essay Title Generator](https://www.besttitlegenerator.com/index.php) 或者 [Research title generator!](https://cjquines.com/titlegen#) 之类的网站。
 
 #### 作者-Authors
 基于IEEE标准，被列入作者的个人需要满足以下条件：
@@ -76,14 +76,14 @@ tags:                               #标签
 - 简介中必须通过指出你正在解决的问题来彰显你工作的必要性，概括你的方法或者贡献，给出论文结果的一般性描述；
 - 不需要重复摘要中的内容；
 - 反面示例: <br><br>
-Here at the institute for computer research, me and my colleagues have created the SUPERGP system and have applied it to several toy problems. We had previously fumbled with earlier versions of SUPERGPSYSTEM for a while. This system allows the programmer to easily try lots of parameters, and problems, but incorporates a special constraint system for parameter settings and LISP S-expression parenthesis counting. The search space of GP is large and many things we are thinking about putting into the supergpsystem will make this space much more colorful.
+Here at the institute for computer research, me and my colleagues have created the SUPERGP system and have applied it to several toy problems. We had previously fumbled with earlier versions of SUPERGPSYSTEM for a while. This system allows the programmer to easily try lots of parameters, and problems, but incorporates a special constraint system for parameter settings and LISP S-expression parenthesis counting. The search space of GP is large and many things we are thinking about putting into the supergpsystem will make this space much more colorful.<br><br>
 
 - 正面例子：<br><br>
 Many new domains for genetic programming require evolved programs to be executed for longer amounts of time. For example, it is beneficial to give evolved programs direct access to low-level data arrays, as in some approaches to signal processing \cite{teller5}, and protein segment classification \cite{handley,koza6}. This type of system automatically performs more problem-specific engineering than a system that accesses highly preprocessed data. However, evolved programs may require more time to execute, since they are solving a harder task.<br><br>
 <b>Previous or obvious approach:</b><br/>
-<font color=red>(Note that you can also have a related work section that gives more details about previous work.)</font> One way to control the execution time of evolved programs is to impose an absolute time limit. However, this is too constraining if some test cases require more processing time than others. To use computation time efficiently, evolved programs must take extra time when it is necessary to perform well, but also spend less time whenever possible.<br><br>
+(Note that you can also have a related work section that gives more details about previous work.) One way to control the execution time of evolved programs is to impose an absolute time limit. However, this is too constraining if some test cases require more processing time than others. To use computation time efficiently, evolved programs must take extra time when it is necessary to perform well, but also spend less time whenever possible.<br><br>
 <b>Approach/solution/contribution:</b><br>
-<font color=red>The first sentence of a paragraph like this should say what the contribution is. Also gloss the results.</font>
+The first sentence of a paragraph like this should say what the contribution is. Also gloss the results.
 In this chapter, we introduce a method that gives evolved programs the incentive to strategically allocate computation time among fitness cases. Specifically, with an aggregate computation time ceiling imposed over a series of fitness cases, evolved programs dynamically choose when to stop processing each fitness case. We present experiments that show that programs evolved using this form of fitness take less time per test case on average, with minimal damage to domain performance. We also discuss the implications of such a time constraint, as well as its differences from other approaches to {\it multiobjective problems}. The dynamic use of resources other than computation time, e.g., memory or fuel, may also result from placing an aggregate limit over a series of fitness cases.<br><br>
 <b>Overview:</b><br>
 The following section surveys related work in both optimizing the execution time of evolved programs and evolution over Turing-complete representations. Next we introduce the game Tetris as a test problem. This is followed by a description of the aggregate computation time ceiling, and its application to Tetris in particular. We then present experimental results, discuss other current efforts with Tetris, and end with conclusions and future work.

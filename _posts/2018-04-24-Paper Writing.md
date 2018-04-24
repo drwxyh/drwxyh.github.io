@@ -10,10 +10,10 @@ tags:                               #标签
     - 论文
     - 写作技巧
 ---
-#How to Write Technical Articles 
+# How to Write Technical Articles 
 论文可以被分为两类：一类是原创研究论文，另一类是调查论文。
 
-####研究型论文
+#### 研究型论文
 - 好论文的定义：
 	- 需要对*论文解决的问题、提出的解决方案、得到的结果*有个清晰的陈述；
 	- 需要描述 *问题已有的研究 和 本文的创新点*；
@@ -27,7 +27,7 @@ tags:                               #标签
 	- 确定论文的新颖点，涉及到什么新知识，什么方面做得不够好
 	- 确定论文结果的重要性，提出了什么样的改进措施，有什么效果
 
-####论文的传统框架
+#### 论文的传统框架
 建议先写 approach and result section，然后写 problem section，然后 conclusions, 然后 introduction。后写 introduction 是因为它需要包括总结中的内容。最后写 abstract，给全文一个简明扼要的总结。
 
 - *Abstract*：一般来说 *100~150* 字，不要太多。
@@ -51,18 +51,18 @@ tags:                               #标签
 	- 详细的证明
 	- 其他低层次但是重要的细节
 
-####标题-Title
+#### 标题-Title
 - 避免使用缩写，但是可以包括常见的易于理解的缩写；
 - 避免常见短语，比如：“novel”、“performance evaluation” 或者 “architecture”，因为这些单词太常见了，一搜索就是几千条结果，没人会拿这种词作为搜索关键词；用一些能体现你工作特征的形容词，比如：reliable，scalable，high-performance，robust，low-complexity，low-cost。
 - 如果需要论文标题的灵感，可以查询 [Academic Essay Title Generator](https://www.besttitlegenerator.com/index.php) 或者 [Research title generator!](https://cjquines.com/titlegen#)之类的网站。
 
-####作者-Authors
+#### 作者-Authors
 基于IEEE标准，被列入作者的个人需要满足以下条件：
 - 为理论发展、系统设计、实验设计、原型开发、分析和解释论文中数据做出重要智力贡献；
 - 为文章起草，审查文章、修改内容做出贡献；
 - 参与文章最终版本（包括参考文献）的确定工作；
 
-####摘要-Abstract
+#### 摘要-Abstract
 - 摘要不需要包含参考文献，摘要常常会独立于论文主体使用；
 - 避免使用 *In this paper* 短语，因为在这一块你不会谈其他文章；
 - 不需要证明一些常识，比如：因特网的重要性，Qos是什么东东；
@@ -70,7 +70,7 @@ tags:                               #标签
 - 因为摘要会被搜索引擎检索，所以摘要中需要包含能标志你工作的术语，特别是开发的协议和系统名称之类；
 - 不要包含数学公式；
 
-####简介-Introduction
+#### 简介-Introduction
 - 避免陈词滥调，例如：“recent advance of X” 或者任何暗示互联网发展的话；
 - 要让读者了解你的论文是关于什么的，不要光说你的研究领域如何如何重要，读者不会坚持三页来搞清楚你要干什么；
 - 简介中必须通过指出你正在解决的问题来彰显你工作的必要性，概括你的方法或者贡献，给出论文结果的一般性描述；
@@ -95,7 +95,7 @@ The following section surveys related work in both optimizing the execution time
 	4. 王子是如何打败巨龙的（你的方法的简介）
 	5. 从此王子和公主幸福的生活在一起（解决了问题）
 
-####主体-Body of Paper
+#### 主体-Body of Paper
 在动笔写之前，一定要搞清楚自己想写的是什么。需要重视的不是所用的字词，如果你在为了遣词造句抓耳挠腮的话，准备废弃你写的东西吧，即使它是一整篇文章。下面是一些需要注意的原则：
 
 - 避免使用被动语态，比如：“In each reservation request message, a refresh interval used by the sender is included.” 最好改成 “Each ... message includes ...”
@@ -158,34 +158,34 @@ There are two service models, integrated and differentiated service. Integrated 
 - 表示变量之间关系是使用线图，线不能依靠颜色区分，通常论文黑白打印。显示不同实验时使用柱状图或者散点图；
 - 引用的格式需要保持一致，会议论文引用要加上会议地址，时间，会议全称(不是缩写)；期刊需要加上卷号、期号和页码；年份在某一部分出现一次即可，不要重复出现；
 
-####参考书目-Bibliography
+#### 参考书目-Bibliography
 - 作者避免使用……等，除非作者多于五位；
 - 互联网草案必须标注为”work in progress“；
 - 书籍引用需要包括初版年份，但是不需要 ISBN(国际标准书号)；
 - 引用中不应当出现URL地址；
 - 外国人姓名之间应当空格，如："J. P. Doe"；
 
-####致谢-Acknowledgements
+#### 致谢-Acknowledgements
 - 感谢资金支持者，有的要特殊格式，例如："This work was supported by the National Science Foundation under grant EIA NN-NNNNN."
 - 通常匿名审稿人不被感谢，除非真的提供了特别大的帮助，使用”X helps with Y.“句型陈述；
 
-####实验-Reporting Numerical Results and Simulations
+#### 实验结果-Reporting Numerical Results and Simulations
 - 需要披露足够多的实验细节，保障阅读者可以重复试验，需要提供所有使用的参数，分析使用的样本数量；
 - 模拟结果应当有置信度，如果可能，提供置信区间，存在异常数据时，应当解释异常数据出现的原因；‘
 - 绘图应当有选择，选择哪个参数在什么区间绘图，出现大量直线是建议的；
 - 对于图的描述不应当是表面的，应当具体描述变量之间的关系，是线性的，还是其他关系？
 
-####LaTeX的使用
+#### LaTeX的使用
 - 没有必要把数字包装在 ”$$“ 中；
 - 使用”\cite{1,2,3}“ 而不是 ”\cite{1} \cite{2} \cite{3}“；
 
-####会议论文审查过程
+#### 会议论文审查过程
 1. 会议论文以 pdf 格式递交给委员会；
 2. 技术委员会主席将论文发给一至多位技术委员会成员审查，技术委员会成员身份保密；
 3. 审稿人反馈一份审查报告，通常是3份；
 4. 委员会整理审查报告，将论文按得分排序，开会审议，通常前三分之一直接接受，后三分之一直接拒绝，中间的需要进一步讨论；
 
-###论文的撰写流程
+#### 论文的撰写流程
 1. 搜集资料，查找相关论文；
 	- 文献查阅报告，阅读主要文献在40篇以上；
 	- 选题报告书
@@ -200,6 +200,6 @@ There are two service models, integrated and differentiated service. Integrated 
 5. 分块撰写论文；
 6. 注意图、表、公式、参考文献格式；
 
-###参考文献
+#### 参考文献
 - [硕士论文你有哪些经验与收获？](https://www.zhihu.com/question/20141321/answer/14112630)
 - [Writing Technical Articles](http://www.cs.columbia.edu/~hgs/etc/writing-style.html)

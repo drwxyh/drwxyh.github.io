@@ -10,14 +10,14 @@ tags:                               #标签
     - 论文
     - 阅读技巧
 ---
-# How to Read Teachnical Articles
+#  How to Read Teachnical Articles
 #### 如何阅读国外会议、期刊优秀计算机论文？
 - 首先要搞清楚期刊、会议的级别，从顶级期刊、会议入手，哪怕跟不上也要了解前沿的走向。
 - 当有几十篇论文需要读时，可以按时间顺序排序，把所有论文的 abstract 和 introduction 先看一遍，了解研究问题和贡献。在阅读 introduction 的过程中，了解文章和参考文献的差别，抓住重点比较的参考文献继续读。
 - 论文读完之后，根据文章新旧、相关性画一棵树。如果没有想法，就把论文从高到低看一遍，找出其中自己可以着手的研究点。
 - 先看 abstract ，有一部分 paper 就可以丢了。然后仔细看 introduction 
 
-#### 具体阅读某一篇论文：三遍阅读法
+####  具体阅读某一篇论文：三遍阅读法
 - Pass one : give you a general idea about the paper
 	- 读文章
 		1. 仔细阅读 title、 abstract、introduction；
@@ -43,9 +43,9 @@ tags:                               #标签
 	- 与作者做相同假设，如果自己来写会怎么写，与原文比较，就可以有所创新，发现原文的不足。仔细看上一遍忽略的细节部分，看完之后形成整个论文的框架结构。
 
 
-#### 重点阅读论文中的哪些方面？
+####  重点阅读论文中的哪些方面？
 
-#### 如何做好阅读笔记？
+####  如何做好阅读笔记？
 
-#### 参考文献
+####  参考文献
 - 原文：[How to Read a Paper -- 阅读报告](https://blog.csdn.net/rs_network/article/details/8520297)

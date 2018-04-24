@@ -10,7 +10,7 @@ tags:                               #标签
     - 论文
     - 写作技巧
 ---
-###How to Write Technical Articles 
+#How to Write Technical Articles 
 论文可以被分为两类：一类是原创研究论文，另一类是调查论文。
 
 ####研究型论文
@@ -199,10 +199,6 @@ There are two service models, integrated and differentiated service. Integrated 
 4. 完成论文课题的主体部分；
 5. 分块撰写论文；
 6. 注意图、表、公式、参考文献格式；
-
-###Introduction
-####童话写作法
-
 
 ###参考文献
 - [硕士论文你有哪些经验与收获？](https://www.zhihu.com/question/20141321/answer/14112630)

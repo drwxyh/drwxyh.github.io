@@ -33,7 +33,11 @@ paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
-
+# support math equation
+mathjax:
+  enable: true
+  per_page: false
+  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0

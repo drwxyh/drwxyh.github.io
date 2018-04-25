@@ -37,7 +37,7 @@ anchorjs: true                          # if you want to customize anchor. check
 mathjax:
   enable: true
   per_page: true
-  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  cdn:  https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0

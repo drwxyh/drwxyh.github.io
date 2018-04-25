@@ -126,7 +126,7 @@ tags:                               #标签
 - Pass three : help you understand the paper in depth
 	- 与作者做相同假设，如果自己来写会怎么写，与原文比较，就可以有所创新，发现原文的不足。仔细看上一遍忽略的细节部分，看完之后形成整个论文的框架结构。
 
-####  参考文献
+###  参考文献
 - [How to Read a Paper -- 阅读报告](https://blog.csdn.net/rs_network/article/details/8520297)
 - [中科院大牛博士是如何进行文献检索和阅读](http://muchong.com/html/201206/4616040.html)
 - 如何高效选择、阅读、分析、整理、应用外文文献

@@ -36,6 +36,7 @@ anchorjs: true                          # if you want to customize anchor. check
 # support math equation
 mathjax:
   enable: true
+  per_page: true
   cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # Gems

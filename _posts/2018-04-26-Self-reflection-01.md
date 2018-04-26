@@ -8,9 +8,7 @@ header-img: img/post-bg-life-0.jpg    #这篇文章标题背景图片
 catalog: true                       # 是否归档
 mathjax: true
 tags:                               #标签
-    - paper note
-    - extensive reading
-    - ridesharing
+    - 生活
 ---
 ## 漂浮于空中的人
 > 《论语·为政》：子曰：“学而不思则罔，思而不学则殆。”

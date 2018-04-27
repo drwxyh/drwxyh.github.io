@@ -4,7 +4,7 @@ title:      趣谈：推送拾锦（一） 		# 标题
 subtitle:   如何理解泰勒公式					  #副标题
 date:       2018-04-27              # 时间
 author:     Charles Xu              # 作者
-header-img: img/post-bg-traffic-0.jpg    #这篇文章标题背景图片
+header-img: img/post-bg-line-0.jpg    #这篇文章标题背景图片
 catalog: true                       # 是否归档
 mathjax: true
 tags:                               #标签

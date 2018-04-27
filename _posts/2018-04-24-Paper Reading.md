@@ -28,7 +28,7 @@ tags:                               #标签
 1. 资料检索能力
 利用好资料检索系统，查出所有相关论文，确保没有遗漏。关键点在于如何选择关键词组，范围太小或者太大都不好。那么究竟如何检索外文文献：
 	- 中文文献检索，首推 [中国知网](http://kns.cnki.net/kns/brief/default_result.aspx) ；
-	- 英文文献检索，首推 [Elsevier](https://www.elsevier.com/) ，[PubMed](https://www.ncbi.nlm.nih.gov/pubmed/) 和 [Springer](https://www.springer.com/cn) ;
+	- 英文文献检索，首推 [Elsevier](https://www.elsevier.com/) ，[PubMed](https://www.ncbi.nlm.nih.gov/pubmed/) ，[Springer](https://www.springer.com/cn) ，[HubMed](https://git.macropus.org/hubmed/)，[NCBI](https://www.ncbi.nlm.nih.gov/);
 	- 其次，可以在 Google 学术搜，可以根据词条显示的引用数，初步判断论文的优劣，部分论文可以获取全文，实在找不到可以向论文原作者要，参考模板：
 	![](https://ws3.sinaimg.cn/large/006tNc79gy1fqoq71w76qj31dw0qc0td.jpg)
 	- 文献鸟 [Stork](https://www.storkapp.me/) ，添加关键词，可以每天推送相关文献到邮箱；

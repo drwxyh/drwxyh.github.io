@@ -29,6 +29,7 @@ tags:                               #标签
 ![](https://ws1.sinaimg.cn/large/006tKfTcgy1fqrlgs4d2uj30lx0iejt4.jpg)
 	
 ## 二、文献数据库（Library）的创建
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1fqrmuii9ffg318d0ooqd4.gif)
 ![](https://ws4.sinaimg.cn/large/006tKfTcgy1fqrlmcjdfhj30ly0fdab5.jpg)
 ![](https://ws3.sinaimg.cn/large/006tKfTcgy1fqrlnyanqjj30lz0aygmh.jpg)
 ![](https://ws3.sinaimg.cn/large/006tKfTcgy1fqrlos5tyvj30m10inq4m.jpg)
@@ -38,7 +39,10 @@ tags:                               #标签
 ![](https://ws2.sinaimg.cn/large/006tKfTcgy1fqrlsjyc0oj30hn0kndhb.jpg)
 ![](https://ws4.sinaimg.cn/large/006tKfTcgy1fqrlu8ngqfj30fj0kh75u.jpg)
 ## 三、新文献条目的添加
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fqrmye2gp5j31kw0zkqhc.jpg)
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1fqrn1otb93j31kw0zk7id.jpg)
 ### 手动输入
+
 ### 直接联机检索下载
 ### 通过PDF文档识别搜索导入
 ### 直接从网络数据库导入

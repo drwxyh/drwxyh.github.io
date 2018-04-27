@@ -184,6 +184,7 @@ There are two service models, integrated and differentiated service. Integrated 
 2. 技术委员会主席将论文发给一至多位技术委员会成员审查，技术委员会成员身份保密；
 3. 审稿人反馈一份审查报告，通常是3份；
 4. 委员会整理审查报告，将论文按得分排序，开会审议，通常前三分之一直接接受，后三分之一直接拒绝，中间的需要进一步讨论；
+5. 一个了解会议等级的网站：[Conference Ranks](http://www.conferenceranks.com/)；
 
 ####  论文的撰写流程
 1. 搜集资料，查找相关论文；

@@ -427,3 +427,44 @@ Java系统程序猿对原始数据类型使用（三向切分）的快速排序�
 分析：
 ![](https://ws3.sinaimg.cn/large/006tKfTcgy1fqspaucy4yj30wv0d975y.jpg)
 ![](https://ws3.sinaimg.cn/large/006tKfTcgy1fqspboe9fkj30wy0cct9b.jpg)
+总结：
+![](https://ws1.sinaimg.cn/large/006tKfTcgy1fqv0e2jvipj30vd07gdgh.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fqv2k9svf9j30vb0dajt7.jpg)
+
+### 二叉查找树
+定义：二叉查找树（BST）是一棵二叉树，其中每个结点都含有一个Comparable的键（以及相关联的值）且每个结点的键都大于其左子树中的任意结点的键而小于右子树的任意结点的键。
+
+实现：
+
+- 用内部私有类来表示二叉查找树上的一个结点；
+- 每个节点都包含一个键、一个值、一条左链接、一条右链接和一个结点计数器；
+
+代码：
+![](https://ws4.sinaimg.cn/large/006tKfTcgy1fqv3pmkkl3j31dy18440x.jpg)
+
+分析：
+二叉查找树的运行时间取决于树的形状，而树的形状又取决于键被插入的先后顺序。最好的情况下，一棵含有 N 个节点的树是完全平衡的，每条空链接和根节点的距离都是 lgN。
+![](https://ws1.sinaimg.cn/large/006tKfTcgy1fqv3u104tij30ut0fa490.jpg)
+![](https://ws1.sinaimg.cn/large/006tKfTcgy1fqv3v1qm4tj30up05j0w8.jpg)
+
+辅助函数：
+每一个公有方法都对应着一个私有方法，接受一个额外的链接作为参数指向某一个结点。
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fqv51y5n2tj31ei11mgnk.jpg)
+![](https://ws4.sinaimg.cn/large/006tKfTcgy1fqv52i6l9pj31ee0iagmm.jpg)
+
+删除操作：
+
+- 删除最小元素：不断深入根结点的左子树，直到遇到一个空链接，然后将指向该结点的链接指向其右子树。
+- 删除最大元素：不断深入根节点的右子树，直到遇到一个空链接，然后将指向该结点的链接指向其左子树。
+- 删除任意元素：删除拥有两个子结点的结点，考虑如何处理两棵子树？
+	- 删除父结点后，用其后继结点代替，所谓后继结点就是右子树中最小的结点；
+		- 将指向即将被删除的结点的链接保存为 t；
+		- 将 x 指向它的后继结点 min(t.right)；
+		- 将 x 的右链接指向 deleteMin(t.right)；
+		- 将 x 的左链接指向 t.left；
+
+代码：
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1fqv5y8nu3wj31eg0zctah.jpg)
+
+范围查找：
+

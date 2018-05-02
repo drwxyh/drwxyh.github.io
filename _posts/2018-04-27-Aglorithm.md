@@ -555,7 +555,7 @@ Java系统程序猿对原始数据类型使用（三向切分）的快速排序�
 			- Case 2：当前结点的父结点是红色的，叔叔结点是黑色的，且当前结点是其父结点的右子结点；处理：![](https://ws4.sinaimg.cn/large/006tKfTcgy1fqw3ul0vyoj30md06xjrr.jpg)
 				- 将父结点设置为当前节点；
 				- 以当前节点为支点左旋；
-			- Case 3：当前结点的父结点是红色的，叔叔结点是黑色的，且当前结点是其父结点的左子结点；处理：![](https://ws1.sinaimg.cn/large/006tKfTcgy1fqw3v85e7vj30md06w74m.jpg)
+			- Case 3：当前结点的父结点是红色的，叔叔结点是黑色的，且当前结点是其父结点的左子结点；处理：![](https://ws1.sinaimg.cn/large/006tKfTcgy1fqw3v85e7vj30md06w74m.jp)
 				- 将父结点设为黑色；
 				- 将祖父结点设为红色；
 				- 以祖父结点为支点右旋；

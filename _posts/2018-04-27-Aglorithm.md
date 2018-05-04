@@ -515,7 +515,7 @@ Java系统程序猿对原始数据类型使用（三向切分）的快速排序�
 分析：
 ![](https://ws2.sinaimg.cn/large/006tKfTcgy1fqvvzqsoqij30uo04qmzp.jpg)
 
-#### 红黑二叉查找树
+#### 红黑二叉查找树（参考算法导论，区别于书中内容）
 思想：用标准的查找二叉树（完全由2-结点构成）和一些额外信息（替换3-结点）来表示2-3树，树种的链接分为两种类型：
 
 - 红链接将两个2-结点连接起来构成一个3-结点；
@@ -563,6 +563,97 @@ Java系统程序猿对原始数据类型使用（三向切分）的快速排序�
 图例：将红黑树的红链接画平，所有的空链接到根结点的距离都是相同的。
 ![](https://ws3.sinaimg.cn/large/006tKfTcgy1fqvxkyefjnj30sh06kgog.jpg)
 
+代码：
+![](https://ws2.sinaimg.cn/large/006tNc79gy1fqy49zg2lsj30oz0qedgj.jpg)
+![](https://ws3.sinaimg.cn/large/006tNc79gy1fqy4b48ibqj30p00b6aa9.jpg)
 
+4. [删除 delete](https://blog.csdn.net/shltsh/article/details/46835757)
+	- 第一步：将红黑树当作一棵二叉查找树，将结点删除，分三种情况：
+		- 删除结点没有子结点，直接将该结点删除；
+		![](https://ws2.sinaimg.cn/large/006tNc79gy1fqy5gwow01j30nw0bct8o.jpg)
+		- 被删除结点只有一个子结点，删除后，用唯一子结点顶替其位置；
+		![](https://ws4.sinaimg.cn/large/006tNc79gy1fqy5hn8pg3j30nc0baweg.jpg)
+		- 被删除结点有两个子结点，先找出其后继结点，拷贝后继结点内容，删除后继结点；
+		![](https://ws3.sinaimg.cn/large/006tNc79gy1fqy5k6b5kbj312o0bcaak.jpg)
+	- 第二步：通过旋转和重新着色操作修正树，使之重新成为一棵红黑树：
+		- Case 1：x是黑加黑结点，x的兄弟结点是红色；
+			- 将x的兄弟结点设为黑色；
+			- 将x的父结点设为红色；
+			- 对x的父结点进行左旋；
+			- 左旋后，重新设置x的兄弟结点；
+		![](https://ws3.sinaimg.cn/large/006tNc79gy1fqy607eh86j318w0cajs9.jpg)
+		- Case 2：x是黑加黑结点，x的兄弟结点是黑色，兄弟结点的子结点都是黑色；
+			- 将x的兄弟结点设为红色；
+			- 设置x的父节点为新的x结点；
+		![](https://ws2.sinaimg.cn/large/006tNc79gy1fqy614kpb3j318w0cwwfe.jpg)
+		- Case 3：x是黑加黑结点，x的兄弟结点的左孩子结点是红色，右孩子结点是黑色的；
+			- 将x兄弟结点的左孩子设为黑色；
+			- 将x兄弟结点设为红色；
+			- 对x的兄弟结点进行右旋；
+			- 右旋后，重新设置x的兄弟结点；
+		![](https://ws1.sinaimg.cn/large/006tNc79gy1fqy61qpwjrj318s0eyt9l.jpg)
+		- Case 4：x是黑加黑结点，x的兄弟节点的右孩子结点是红色，左孩子结点是任意颜色；
+			- 将x父结点颜色赋值给x的兄弟结点；
+			- 将x父结点设置为黑色；
+			- 将x兄弟结点的右子结点设为黑色；
+			- 对x的父结点进行左旋；
+			- 设置x为根结点；
+		![](https://ws4.sinaimg.cn/large/006tNc79gy1fqy62ivie1j31900dcjsf.jpg)
+		
+#### 散列表
+用数组来实现无需的符号表，将键作为数组的索引而数组中键i处存储的就是它对应的值；
+
+散列查找算法的步骤：
+
+- 用散列函数将被查找的键转化为数组的一个索引；
+- 处理碰撞冲突，典型方法有拉链法，线性探测法；
+
+散列函数：对于正整数，浮点数和字符串可以使用除留余数法；
+
+JAVA 的约定：每种数据类型都需要相应的散列函数，所有数据类型都继承了一个能够返回一个32比特整数的 hashCode() 方法，hashCode 方法和 equals 方法保持一致；
+
+软缓存：如果散列值得计算很耗时，可以将每个键的散列值缓存起来，即在每个键中使用一个hash变量来保存它的hashCode返回值；
+
+优秀散列方法需要满足的三个条件：
+
+- 一致性：等价的键必然产生相等的散列值；
+- 高效性：计算简便；
+- 均匀性：均匀地散列所有的键；
+
+![](https://ws3.sinaimg.cn/large/006tNc79gy1fqyb05wyo9j311b09hahq.jpg)
+
+拉链法：将大小为M的数组中的每个元素指向一条链表，链表中每个元素指向一条链表，链表中的每个结点都存储了散列值为该元素的索引的键值对。
+
+代码：
+![](https://ws2.sinaimg.cn/large/006tNc79gy1fqyc57oitgj31e00oggmv.jpg)
+
+分析：
+![](https://ws1.sinaimg.cn/large/006tNc79gy1fqyen78hg6j31180dy14a.jpg)
+
+线性探测法：用大小为M的数组保存N个键值，其中 M>N，依靠数组中的空位解决碰撞冲突，当碰撞发生时，直接检测散列表的下一个位置。
+
+代码：
+![](https://ws2.sinaimg.cn/large/006tNc79gy1fqyfrqa666j31e011g0uj.jpg)
+
+删除操作：线性探测法不能直接删除元素，不然会导致在此元素之后的元素无法被探测到，所以在此元素之后的元素需要被删除然后重新插入；
+
+箭簇：线性探测的平均成本取决于元素在插入数组后聚集成的一组连续的条目，称为箭簇，短小的箭簇可以保证较高的插入效率。
+
+分析：
+![](https://ws2.sinaimg.cn/large/006tNc79gy1fqyfzkrt62j30tj0o8h1a.jpg)
+
+内存分析：
+![](https://ws4.sinaimg.cn/large/006tNc79gy1fqyg2k1gufj30u205m76b.jpg)
+
+答疑：
+
+- 问：JAVA中Integer，Double，Long类型的hashCode()方法是如何实现的？
+- 答：Integer会返回该整数的32位值，对于Double和Long会返回机器表示前32位和后32位抑或的结果。
+- 问：动态调整数组大小时大小总是乘以2，会不会只使用了hashCode的低位值？
+- 答：是的，解决的一个方法是用一个大于M的素数来散列键值对。
+- 问：为什么不将hash(x)实现为x.hashCode%M, Math.abs(x.hashCode())%M?
+- 答：散列值必须在0到M-1之前，在Java中取余的结果可能会是复数；而Math.abs()在对最大整数时会返回一个负数。
+- 问：散列表的查找会比红黑树快么？
+- 答：取决于键的类型，决定了hashCode()的计算成本是否大于compareTo()的比较成本。对于常见类型，两者计算成本类似，因此散列表比红黑树快得多。
 
 

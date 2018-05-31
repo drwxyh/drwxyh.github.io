@@ -1,3 +1,4 @@
+
 ---
 layout:     post                    # 使用的布局
 title:      笔记：算法练习 			   # 标题 
@@ -12,6 +13,7 @@ tags:                               #标签
 	- practice
 ---
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$$','$$'],['\\(','\\)']]} }); </script> <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+
 ## 图论算法理论、实现及应用例题解答（Python）
 
 ### 例1.1	用邻接矩阵存储有向图，并输出各顶点的出入和入度。
@@ -308,7 +310,7 @@ if __name__ == "__main__":
 
 ![](https://ws1.sinaimg.cn/large/006tKfTcgy1fruevegd1jj30l3093weq.jpg)
 
-```PYTHON
+```python
 def find_non_irrigation():
     global farm, m, n
     for i in range(0, m):

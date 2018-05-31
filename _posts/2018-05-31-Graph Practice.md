@@ -9,7 +9,6 @@ catalog: true                       # 是否归档
 mathjax: true
 tags:                               #标签
 	- graph theory
-
 ---
 
 ## 图论算法理论、实现及应用例题解答（Python）

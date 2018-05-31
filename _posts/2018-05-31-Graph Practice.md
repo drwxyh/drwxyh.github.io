@@ -1,8 +1,8 @@
-
 ---
 layout:     post                    # 使用的布局
 title:      笔记：算法练习 			   # 标题 
 subtitle:   图论算法理论、实现及应用例题解答（python）  #副标题
+
 date:       2018-05-31              # 时间
 author:     Charles Xu              # 作者
 header-img: img/post-bg-waves.jpg    #这篇文章标题背景图片

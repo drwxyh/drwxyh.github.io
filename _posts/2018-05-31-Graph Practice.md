@@ -9,8 +9,10 @@ catalog: true                       # 是否归档
 mathjax: true
 tags:                               #标签
 	- graph theory
+
 ---
-# 图论算法理论、实现及应用例题解答（Python）
+
+## 图论算法理论、实现及应用例题解答（Python）
 
 ### 例1.1	用邻接矩阵存储有向图，并输出各顶点的出入和入度。
 

@@ -1,5 +1,6 @@
 
 ---
+
 layout:     post                    # 使用的布局
 title:      笔记：算法练习 			   # 标题 
 subtitle:   图论算法理论、实现及应用例题解答（python）  #副标题
@@ -11,6 +12,7 @@ mathjax: true
 tags:                               #标签
     - graph theory
     - code practice
+    
 ---
 
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$$','$$'],['\\(','\\)']]} }); </script> <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>

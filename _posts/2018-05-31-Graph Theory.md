@@ -1,7 +1,8 @@
+
 ---
 layout:     post                    
-title:      笔记：算法练习 			   
-subtitle:   图论算法理论、实现及应用例题解答（python）  
+title:      笔记：算法练习
+subtitle:   图论算法理论、实现及应用例题解答（python） 
 date:       2018-05-31              
 author:     Charles Xu              
 header-img: img/post-bg-waves.jpg    

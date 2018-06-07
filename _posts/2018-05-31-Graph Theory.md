@@ -841,5 +841,77 @@ if __name__ == "__main__":
     topo_sort(c)
 ```
 
+### 例 2.12	窗口绘制(Window Pains) 
 
+Boudreaux 喜欢多任务的系统，特别是当他用计算机时。他从不满足于每次只运行一个程序，通常他总是同时运行9 个程序，每个程序有一个窗口。由于显示器屏幕大小有限，他把窗口重叠，并且当他想用某个窗口时，他就把它调到最前面。如果他的显示器是一个4\*4 的网格，则Boudreaux的每一个程序窗口就应该像图2.32 那样用2*2 大小的窗口表示。
 
+![](https://ws1.sinaimg.cn/large/006tKfTcgy1fs2dl189e4j30p9099aao.jpg)
+
+当Boudreaux 把一个窗口调到最前面时，它的所有方格都位于最前面，覆盖它与其它窗口共用的方格。例如，如果先是窗口1 位于最前面，然后是窗口2，那么结果应为图2.33(a)所示。如果接下来窗口4 位于最前面，则结果应为图2.33(b)所示，等等。
+
+ ![](https://ws2.sinaimg.cn/large/006tKfTcgy1fs2e8kmwiij30dp0523yi.jpg)
+
+不幸的是，Boudreaux 的电脑很不稳定，经常崩溃。他通过观察这些窗口，判断出如果每个窗口都被正确地调到最前面时窗口表示不应该是现在这种图形，就能判断出电脑是死机了。
+
+```python
+class ArcNode:
+    def __init__(self, to, next=None):
+        self.to = to
+        self.next = next
+
+def topo_sort():
+    top = 0
+    has_circle = False
+    for i in range(1, 10):
+        if count[i] == 0:
+            count[i] = top
+            top = i
+
+    for i in range(1, 10):
+        if top == 0:
+            has_circle = True
+            break
+        else:
+            j = top
+            top = count[j]
+            p = head_list[j]
+            while p:
+                k = p.to
+                count[k] -= 1
+                if count[k] == 0:
+                    count[k] = top
+                    top = k
+                p = p.next
+
+    if not has_circle:
+        print('THESE WINDOWS ARE CLEAN')
+    else:
+        print('THESE WINDOWS ARE BROKEN')
+
+if __name__ == "__main__":
+    head_list = [0 for i in range(0, 10)]
+    count = [0 for i in range(0, 10)]
+    restrain = [[1], [1, 2], [2, 3], [3], [1, 4], [1, 2, 4, 5], [2, 3, 5, 6], [3, 6], [4, 7], [4, 5, 7, 8], [5, 6, 8, 9], [6, 9], [7], [7, 8], [8, 9], [9]]
+    screen = []
+    with open('2.12') as fp:
+        fp.readline()
+        for x in fp.readlines():
+            if x != 'END':
+                for y in x.split():
+                    screen.append(int(y))
+
+    for i in [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14]:
+        for x in restrain[i]:
+            if x != screen[i]:
+                t = ArcNode(x)
+                count[x] += 1
+                if head_list[screen[i]] == 0:
+                    head_list[screen[i]] = t
+                else:
+                    p = head_list[screen[i]]
+                    while p.next:
+                        p = p.next
+                    p.next = t
+
+    topo_sort()
+```

@@ -915,3 +915,218 @@ if __name__ == "__main__":
 
     topo_sort()
 ```
+### 例 2.13 叠图片(Frame Stacking)
+
+考虑如下图所示的 5 张放置在9*8 大小阵列中的图片。 
+
+![](https://ws3.sinaimg.cn/large/006tNc79gy1fswndxom8nj30o007jwev.jpg) 
+
+​	现在将这5 张图片一张叠一张地叠在一起，其中第1 张放在最底下，第5 张放在最上面，如果某张图片的某一部分覆盖了其他一张图片，则它将遮住底下这张图片。这5 张图片叠起来后的效果如图2.36(b)所示，你知道它们是按照什么顺序叠起来的吗？答案是：EDABC。在本题中，你的任务是给定叠起来的效果图，判断这些图片是按照怎样的顺序叠起来的（从最底下到最上面），规则如下：
+
+(1) 图片宽度均为1 个字符，四边均不短于3 个字符；
+
+(2) 每张图片四条边当中每条边都能看见一部分；
+
+(3) 用每张图片中的字母代表对应的图片，任何两张图片都不会出现相同的字母。
+
+```python
+import numpy as np
+
+def find_range(x, y):
+    ch = graph[x][y]
+    left, right, up, down = width, 0, height, 0
+    for i in range(0, height):
+        for j in range(0, width):
+            if graph[i][j] == ch:
+                up = min(i, up)
+                down = max(i, down)
+                left = min(j, left)
+                right = max(j, right)
+    return up, right, down, left
+
+def construct_graph():
+    count = 0
+    relation = np.zeros((26, 26), dtype=int)
+    is_visited = [0 for i in range(0, 5)]
+    for i in range(0, height):
+        for j in range(0, width):
+            ch = graph[i][j]
+            v = ord(ch) - ord('A')
+            if ch != '.' and is_used[v] == 0:
+                is_used[v] = 1
+                count += 1
+
+            if ch == '.' or is_visited[v] == 1:
+                continue
+            else:
+                up, right, down, left = find_range(i, j)
+                for k in range(up, down + 1):
+                    if graph[k][left] != ch:
+                        if relation[v][ord(graph[k][left]) - 65] == 0:
+                            degree[ord(graph[k][left]) - 65] += 1
+                            relation[v][ord(graph[k][left]) - 65] = 1
+                    if graph[k][right] != ch:
+                        if relation[v][ord(graph[k][right]) - 65] == 0:
+                            degree[ord(graph[k][right]) - 65] += 1
+                            relation[v][ord(graph[k][right]) - 65] = 1
+                for k in range(left, right + 1):
+                    if graph[up][k] != ch:
+                        if relation[v][ord(graph[up][k]) - 65] == 0:
+                            degree[ord(graph[up][k]) - 65] += 1
+                            relation[v][ord(graph[up][k]) - 65] = 1
+                    if graph[down][k] != ch:
+                        if relation[v][ord(graph[down][k]) - 65] == 0:
+                            degree[ord(graph[down][k]) - 65] += 1
+                            relation[v][ord(graph[down][k]) - 65] = 1
+                is_visited[v] = 1
+    return relation, count
+
+def topo_sort(depth, count, res):
+    if depth >= count:
+        print(res)
+        return
+    for i in range(0, 26):
+        if is_used[i]:
+            if degree[i] == 0:
+                res += chr(i + 65)
+                degree[i] = -1
+                for j in range(0, 26):
+                    if relation[i][j] == 1:
+                        degree[j] -= 1
+                topo_sort(depth + 1, count, res)
+                res = res[0:-2]
+                degree[i] = 0
+                for j in range(0, 26):
+                    if relation[i][j] == 1:
+                        degree[j] += 1
+
+if __name__ == '__main__':
+    graph_list = list()
+    with open('2.13') as fp:
+        height = int(fp.readline())
+        width = int(fp.readline())
+        for line in fp.readlines():
+            line_list = list(line.strip())
+            graph_list.append(line_list)
+    graph = np.array(graph_list)
+    is_used = [0 for x in range(0, 26)]
+    degree = [0 for x in range(0, 26)]
+    relation, count = construct_graph()
+    res = str()
+    topo_sort(0, count, res)
+```
+
+简单思路：这条题目很显然是要用拓扑排序，而且要输出所有可能的顺序，所以需要使用BFS搜索。题目的第一步要构建搜索图，需要分析图的内在关系。因为图中每一张图片中字母覆盖的边长都不一样，所以不存在某一个字母的四边会被另一张字母完全覆盖。基于以上观察，我们对图片的每一个元素（字符）进行遍历，如果是“.”忽略，如果是其他字母，那么我们就要确定这个字母（比如A）覆盖的范围（矩形），确定范围之后，我们进一步考察这个矩形的四边，如果在这四条边上出现了其他字母（比如B），那么我们就能确定B所在图片覆盖在了A所在图片的上方，我们在构建图的时候，就存在一条边A->B，说明放A，后放B。
+
+### 例 2.14 求如图所示 AOE 网络的关键路径并输出。
+
+![AOE图](https://ws2.sinaimg.cn/large/0069RVTdgy1fu3kk182zkj30hp05twek.jpg)
+
+```python
+class ArcNode:
+    def __init__(self, to, dur, no, next=None):
+        self.to = to
+        self.dur = dur
+        self.no = no
+        self.next = next
+
+    def __str__(self):
+        return '(' + str(self.to) + ',' + str(self.dur) + ',' + str(self.no) + ')'
+
+def critical_activities(n, m):
+    ee = [0 for i in range(0, n)]
+    el = [0 for i in range(0, n)]
+    top1, top2 = -1, -1
+    for i in range(0, n):
+        if in_degree[i] == 0:
+            in_degree[i] = top1
+            top1 = i
+	# forward topo sort, calculate the earliest time of each event
+    for i in range(0, n):
+        if top1 == -1:
+            print("Cycle exists!")
+            return
+        else:
+            j = top1
+            top1 = in_degree[top1]
+            p = out_list[j]
+            while p:
+                k = p.to
+                in_degree[k] -= 1
+                if in_degree[k] == 0:
+                    in_degree[k] = top1
+                    top1 = k
+                ee[k] = max(ee[j] + p.dur, ee[k])
+                p = p.next
+	# reverse topo sort, calculate the latest time of each event
+    for i in range(0, n):
+        el[i] = max(ee)
+        if out_degree[i] == 0:
+            out_degree[i] = top2
+            top2 = i
+
+    for i in range(0, n):
+        j = top2
+        top2 = out_degree[top2]
+        q = in_list[j]
+        while q:
+            k = q.to
+            out_degree[k] -= 1
+            if out_degree[k] == 0:
+                out_degree[k] = top2
+                top2 = k
+            el[k] = min(el[j] - q.dur, el[k])
+            q = q.next
+	# according to the ee and el, calculate the earliest time and latest of each activity
+    ae = [0 for i in range(0, m + 1)]
+    al = [ee[n - 1] for i in range(0, m + 1)]
+    print("Critical activities are:", end=':')
+    for i in range(0, n):
+        t = out_list[i]
+        while t:
+            j = t.to
+            k = t.no
+            ae[k] = ee[i]
+            al[k] = el[j] - t.dur
+            if ae[k] == al[k]:
+                is_critical[k] = 1
+                print(k, end=' ')
+            t = t.next
+    print()
+
+if __name__ == '__main__':
+	# store the graph info
+    with open('2.14') as fp:
+        n = int(fp.readline())
+        out_list = [0 for i in range(0, n)]
+        in_list = [0 for i in range(0, n)]
+        in_degree = [0 for i in range(0, n)]
+        out_degree = [0 for i in range(0, n)]
+        m = int(fp.readline())
+        is_critical = [0 for i in range(0, m + 1)]
+        for data in fp.readlines():
+            origin, to, dur, no = [int(x) for x in data.split(',')]
+            out_degree[origin] += 1
+            t = ArcNode(to, dur, no)
+            if out_list[origin] == 0:
+                out_list[origin] = t
+            else:
+                p = out_list[origin]
+                while p.next:
+                    p = p.next
+                p.next = t
+
+            in_degree[to] += 1
+            s = ArcNode(origin, dur, no)
+            if in_list[to] == 0:
+                in_list[to] = s
+            else:
+                q = in_list[to]
+                while q.next:
+                    q = q.next
+                q.next = s
+
+    critical_path(n, m)
+```
+
+简单思路：先进行一次正向的拓扑排序，计算每个事件的最早发生时间；然后，再进行一次逆向拓扑排序，计算每个事件的最晚发生时间，然后根据事件的最早最晚信息，计算每个活动的最早最晚信息，所谓关键活动就是最早时间和最晚时间相同的活动，活动构成的路径便是关键路径。注意在存储图的信息时，要构建正向边和反向边的链表，同时记录事件点的出度和入度。

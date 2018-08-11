@@ -1,3 +1,5 @@
+---
+
 layout:     post                    # 使用的布局
 title:      近似算法：背包问题 			   # 标题 
 subtitle:   0-1背包问题近似算法
@@ -10,6 +12,10 @@ tags:                               #标签
 
 - approximation algorithm
 - knapsack problem 
+
+---
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$$','$$'],['\\(','\\)']]} }); </script> <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script> 
 
 #### Knapsack Problem
 

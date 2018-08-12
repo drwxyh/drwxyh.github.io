@@ -1296,4 +1296,4 @@ if __name__ == "__main__":
 
 ```
 
-简单思路：见博客：
+简单思路：见博客 [图论最小生成树](https://drwxyh.github.io/2018/08/12/Minimum-Spanning-Tree/)。

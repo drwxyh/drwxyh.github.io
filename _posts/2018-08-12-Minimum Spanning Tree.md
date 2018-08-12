@@ -14,7 +14,7 @@ tags:                               #标签
 - minimum spanning tree
 
 ---
-<script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$$','$$'],['$','$'],['\\(','\\)']]} }); </script> <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script> 
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$$','$$'],['\\(','\\)']]} }); </script> <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script> 
 
 ## Basic Knowledge
 
@@ -93,17 +93,21 @@ class UFset:
 
 **生成树的构建：**
 
-> GENERIC-MST(G, w)
->
-> 1	A = ∅
->
-> 2	while A does not form a spanning tree
->
-> 3		find an edge(u, v) that is safe for A
->
-> 4		A = A ∪ {(u, v)}
->
-> 5	return A
+```
+GENERIC-MST(G, w)
+
+1	A = ∅
+
+2	while A does not form a spanning tree
+
+3		find an edge(u, v) that is safe for A
+
+4		A = A ∪ {(u, v)}
+
+5	return A
+```
+
+
 
 在上述过程中，构造 $MST$ 的过程，就是不断寻找 $$A$$ 的安全边的过程。而 $$A$$ 被包含在图的某一棵 $$MST$$ 中。那么究竟什么样的边，对于 $$A$$ 来说是一条 **safe edge** 呢？通俗理解：就是这条边加入 $$A$$ 后还要能保证其是图的某一棵 $$MST$$ 一个子集。下面，给出一些定义:
 
@@ -123,27 +127,29 @@ class UFset:
 
 **思路：** 寻找安全边的方法是，在所有连接森林中两棵不同树的边里面，寻找最小的边 $$(u, v)$$。
 
-> MST-KRUSKAL(G, w)
->
-> 1	A = ∅
->
-> 2	for each vertex v ∈ G.V
->
-> 3		MAKE-SET(v)
->
-> 4	sort the edges of G.E into nodecreasing order by weight w
->
-> 5 	for each edge (u, v) ∈ G.E, take in nodecreasing order by weight
->
-> 6		if FIND-SET(u) ≠ FIND-SET(v)
->
-> 7			A = A ∪ {(u, v)}
->
-> 8			UNION(u, v)
->
-> 9	return A 
+```
+MST-KRUSKAL(G, w)
 
-**复杂度：** 时间复杂度为 O(|E|lg|E|)，主要取决于边数，适合稀疏图。
+1	A = ∅
+
+2	for each vertex v ∈ G.V
+
+3		MAKE-SET(v)
+
+4	sort the edges of G.E into nodecreasing order by weight w
+
+5 	for each edge (u, v) ∈ G.E, take in nodecreasing order by weight
+
+6		if FIND-SET(u) ≠ FIND-SET(v)
+
+7			A = A ∪ {(u, v)}
+
+8			UNION(u, v)
+
+9	return A 
+```
+
+**复杂度：** 时间复杂度为 $$O( \vert E \vert lg \vert E \vert  )$$，主要取决于边数，适合稀疏图。
 
 **图例：** 
 
@@ -188,31 +194,33 @@ def Kruskal():
 
 **思路：** Prim 算法具有一个性质是集合 $$A$$ 中的边总是构成一棵树。这棵树从某一顶点 r 开始，每一次扩展所加入的边必须是使得树的总权重增加最少的边，最终形成图的一棵最小生成树。
 
-> MST-PRIM(G, w)
->
-> 1	for each vertex u ∈ G.V
->
-> 2		u:key = ∞	# 连接该顶点和树中顶点的最小权重，如果不存在为无穷大
->
-> 3		u:π = NIL	# 顶点在树中的父节点
->
-> 4	r.key = 0
->
-> 5 	Q = G.V
->
-> 6	while Q ≠ ∅
->
-> 7		u = EXTRACT-MIN(Q)	# 轻量级边在Q中的端点
->
-> 8		for each v ∈ G.Adj[u]	# 更新与 u 相邻的Q中顶点的信息
->
-> 9			if v ∈ Q and w(u, v) < v.key 
->
-> 10				v.key = w(u, v)
->
-> 11				v.π = u
+```
+MST-PRIM(G, w)
 
-**复杂度：** 时间复杂度为 O(|V|^2)，与图中的边数无关，适合稠密图。
+1	for each vertex u ∈ G.V
+
+2		u:key = ∞	# 连接该顶点和树中顶点的最小权重，如果不存在为无穷大
+
+3		u:π = NIL	# 顶点在树中的父节点
+
+4	r.key = 0
+
+5 	Q = G.V
+
+6	while Q ≠ ∅
+
+7		u = EXTRACT-MIN(Q)	# 轻量级边在Q中的端点
+
+8		for each v ∈ G.Adj[u]	# 更新与 u 相邻的Q中顶点的信息
+
+9			if v ∈ Q and w(u, v) < v.key 
+
+10				v.key = w(u, v)
+
+11				v.π = u
+```
+
+**复杂度：** 时间复杂度为 $$O(\vert V \vert ^2)$$，与图中的边数无关，适合稠密图。
 
 **图例：**
 
@@ -291,7 +299,7 @@ def Prim():
 >
 > 9	Output: T is the minimum spanning tree of G
 
-**复杂度：** 每一次循环都会将不连通分量的个数减半，一开始不连通分量的个数为 |V|，所以循环将要进行 log(|V|) 次。在每次循环的内部，需要检查每一条边，所以总的时间复杂度是 O(|E|lg|V|)。
+**复杂度：** 每一次循环都会将不连通分量的个数减半，一开始不连通分量的个数为 $$\vert V \vert$$，所以循环将要进行 $$log(\vert V \vert)$$ 次。在每次循环的内部，需要检查每一条边，所以总的时间复杂度是 $$O(\vert E \vert lg \vert V \vert)$$。
 
 **图例：** 
 

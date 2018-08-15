@@ -37,10 +37,10 @@ tags:                               #标签
 
 综上所述，$OPT$ 的取值范围应当为 $[\lceil \frac{\sum w_i}{C} \rceil, n]$。下面给出几个变量的定义:
 $$
-y_i= \begin{cases} 1 & , if\ bin\ i\ is\ used. \\ 0 &, otherwise. \end{cases}  i=1, 2, \dots, n 
+y_i= \begin{cases} 1 & , if\ bin\ i\ is\ used. \\ 0 &, otherwise. \end{cases}  i=1, 2, \dots, n
 $$
 $$
-x_{ij} = \begin{cases} 1 &, if\ the\ item\ j\ is\ placed\ into\ bin\ i. \\ 0, & otherwise. \end{cases} i, j = 1,2,\dots, n
+x_{ij} = \begin{cases} 1 &, if\ the\ item\ j\ is\ placed\ into\ bin\ i. \\ 0, & otherwise. \end{cases} i, j =1,2,\dots, n
 $$
 
 问题的数学描述：

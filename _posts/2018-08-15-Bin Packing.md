@@ -4,7 +4,7 @@ title:      近似算法：装箱问题              # 标题
 subtitle:   装箱问题的几种经典近似算法
 date:       2018-08-15              # 时间
 author:     Charles Xu              # 作者
-header-img: img/post-bg-dog-04.jpg    #这篇文章标题背景图片
+header-img: img/post-bg-dog-04.jpeg    #这篇文章标题背景图片
 catalog: true                       # 是否归档
 mathjax: true
 tags:                               #标签
